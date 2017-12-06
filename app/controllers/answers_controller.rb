@@ -1,7 +1,6 @@
 class AnswersController < ApplicationController
   def show
     @question = Question.find_by_id(params[:id])
-    @answers = @question.answers.all
   end
 
   def new
@@ -64,10 +63,6 @@ class AnswersController < ApplicationController
 
   def answer_params
     params.require(:answer).permit(:content)
-  end
-
-  def upvotes
-    @upovtes = Answer.votes_for.size
   end
 
 end
