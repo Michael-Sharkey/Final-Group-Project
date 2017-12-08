@@ -12,35 +12,34 @@
   </head>
 
   <body>
-<div class="container-fluid">
-    <nav class="row">
-        <div class="logo col-sm-2 text-center">
-          <%= link_to image_tag("Logo.png"), root_path %>
-        </div>
-        <div class="col-md">
-          <%= form_for '', method: 'get' do |f| %>
-           <%= f.text_field :body, placeholder: "Search" %>
-            <% end %>
-        </div>
-        <div class="col-md text-right">
-          <% if signed_in? %>
-            <button type="button" class="btn btn-secondary float-right"><%= link_to "Log Out", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure you want to log out?"} %></button>
-            <%= link_to "<i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i>".html_safe, root_path %>
-            <%= link_to "<i class=\"fa fa-user\" aria-hidden=\"true\"></i>".html_safe, user_path(current_user) %>
-            <%= link_to "<i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i>".html_safe, questions_path %>
-            <% else %>
-            <%= link_to "Log In", new_user_session_path %>
-            <button type="button" class="btn btn-secondary float-right"><%= link_to "Sign Up", new_user_registration_path %></button>
-            <% end %>
-      </div>
-    </nav>
-    <!-- <div class="msgs">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div> -->
-
-    <%= yield %>
-</div>
+    <div class="container-fluid">
+        <nav class="row">
+            <div class="logo col-sm-2 text-center">
+              <%= link_to image_tag("Logo.png"), root_path %>
+            </div>
+            <div class="col-md">
+              <%= form_for '', method: 'get' do |f| %>
+               <%= f.text_field :body, placeholder: "Search" %>
+                <% end %>
+            </div>
+            <div class="col-md text-right">
+              <% if signed_in? %>
+                <button type="button" class="btn btn-secondary float-right"><%= link_to "Log Out", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure you want to log out?"} %></button>
+                <%= link_to "<i class=\"fa fa-tachometer\" aria-hidden=\"true\"></i>".html_safe, root_path %>
+                <%= link_to "<i class=\"fa fa-user\" aria-hidden=\"true\"></i>".html_safe, user_path(current_user) %>
+                <%= link_to "<i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i>".html_safe, questions_path %>
+              <% else %>
+                <%= link_to "Log In", new_user_session_path %>
+                <button type="button" class="btn btn-secondary float-right"><%= link_to "Sign Up", new_user_registration_path %></button>
+              <% end %>
+            </div>
+        </nav>
+        <!-- <div class="msgs">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div> -->
+        <%= yield %>
+    </div>
 <script src="https://use.fontawesome.com/6b7272baf0.js"></script>
   </body>
 </html>

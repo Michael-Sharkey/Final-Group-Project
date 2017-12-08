@@ -12,12 +12,6 @@ class UsersController < ApplicationController
     find_user
   end
 
-  def new
-  end
-
-  def create
-  end
-
   def update
     find_user
     if @user.update(user_params)
@@ -34,7 +28,6 @@ class UsersController < ApplicationController
   end
 
   private
-
   def get_user
     @user = current_user
   end
@@ -46,7 +39,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :location, :bio, :previous_industry, :github_url, :avatar, :admin)
   end
-
-
 
 end

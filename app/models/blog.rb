@@ -6,7 +6,6 @@ class Blog < ApplicationRecord
   has_many :comments, dependent: :destroy
   validates :title, presence: true, length: { minimum: 6 }
 
-
   def tag_list
     self.tags.collect do |tag|
       tag.name

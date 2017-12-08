@@ -20,6 +20,7 @@ class TagsController < ApplicationController
       end
   end
 
+  private
   def tag_params
     params.require(:tag).permit(:name)
   end

@@ -55,6 +55,7 @@ Tag.create!(name: 'css')
 Tag.create!(name: 'html')
 Tag.create!(name: 'homework help')
 Tag.create!(name: 'work/life balance')
+Tag.create!(name: 'other')
 
 # Tags on Questions
 Tagging.create!(tag_id: 9, question_id: 1)

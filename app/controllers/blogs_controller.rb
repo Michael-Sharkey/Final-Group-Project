@@ -4,7 +4,6 @@ class BlogsController < ApplicationController
     # @blogs = @user.blogs.all
     @q = Blog.ransack(params[:q])
     @blogs = @q.result.includes(:user, :tags)
-
   end
 
   def show
@@ -40,13 +39,12 @@ class BlogsController < ApplicationController
       else
         render 'edit'
       end
-    end
-
+  end
 
   def destroy
     get_blog
     @blog.destroy
-      redirect_to blogs_path
+    redirect_to blogs_path
   end
 
   private
@@ -62,6 +60,5 @@ class BlogsController < ApplicationController
   def blog_params
     params.require(:blog).permit(:title, :body, :tag_list)
   end
-
 
 end

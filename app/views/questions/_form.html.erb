@@ -1,5 +1,4 @@
-
-  <%= form_with model: @question, local: true do |f|  %>
+<%= form_with model: @question, local: true do |f|  %>
     <% if @question.errors.any? %>
       <div id="explain_error">
         <h2> Uh oh! <%= pluralize(@question.errors.count, "error") %> prohibited this post from being saved: </h2>
@@ -18,8 +17,5 @@
     <%= f.label :tag_list %>
     <%= f.select :tag_list, options_from_collection_for_select(Tag.all.order("name ASC"), 'name','name'), prompt: "Select Category" %>
   </div>
-
-
   <%= f.submit %>
-
-  <% end %>
+<% end %>
