@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#RESTFUL routes
 RSpec.describe 'routing to blogs' do
   it 'routes /blogs to blogs#index' do
     expect(get: "/blogs").to route_to(
@@ -38,6 +38,19 @@ RSpec.describe 'routing to blogs' do
       controller: "blogs",
       action: "destroy",
       id: "1"
+    )
+  end
+  # Search method routes
+  it "routes /blogs to blogs#search" do # GET
+    expect(get: "/blogs/search").to route_to(
+      controller: "blogs",
+      action: "search"
+    )
+  end
+  it "routes /blogs to blogs#search" do #POST
+    expect(post: "/blogs/search").to route_to(
+      controller: "blogs",
+      action: "search"
     )
   end
 end

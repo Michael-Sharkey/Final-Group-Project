@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#RESTFUL routes
 RSpec.describe 'routing to tags' do
   it 'routes /tags to tags#index' do
     expect(get: "/tags").to route_to(
@@ -40,4 +40,5 @@ RSpec.describe 'routing to tags' do
       id: "1"
     )
   end
+  
 end
