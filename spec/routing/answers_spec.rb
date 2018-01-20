@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'routing to question/answers' do
-  #TODO - need to remove route to ansers index - since that is not necessary
+  # no index method or view for answers. remove from resources (for question/question_id/answers#index)
+  # on routes.rb changed resources :answers tp resources :answers, except: [:index]
+  it "does not routes questions/1/answers to answersindex" do
+  expect(:get => "questions/1/answers").not_to be_routable
+  end
+
   it 'routes questions/1/answers/1 to answers#edit' do
     expect(get: "questions/1/answers/1/edit").to route_to(
       controller: "answers",
