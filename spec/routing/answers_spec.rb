@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#RESTFUL routes
 RSpec.describe 'routing to question/answers' do
   # no index method or view for answers. remove from resources (for question/question_id/answers#index)
   # on routes.rb changed resources :answers tp resources :answers, except: [:index]
