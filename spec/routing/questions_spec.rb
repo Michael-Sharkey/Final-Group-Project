@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'routing to questions' do
+  # RESTFUL routes
   it 'routes /questions to questions#index' do
     expect(get: "/questions").to route_to(
       controller: "questions",
@@ -38,6 +39,19 @@ RSpec.describe 'routing to questions' do
       controller: "questions",
       action: "destroy",
       id: "1"
+    )
+  end
+  # Search method routes
+  it "routes /questions to questions#search" do
+    expect(get: "/questions/search").to route_to(
+      controller: "questions",
+      action: "search"
+    )
+  end
+  it "routes /questions to questions#search" do
+    expect(post: "/questions/search").to route_to(
+      controller: "questions",
+      action: "search"
     )
   end
 end

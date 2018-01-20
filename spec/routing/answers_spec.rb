@@ -6,7 +6,6 @@ RSpec.describe 'routing to question/answers' do
   it "does not routes questions/1/answers to answersindex" do
   expect(:get => "questions/1/answers").not_to be_routable
   end
-
   it 'routes questions/1/answers/1 to answers#edit' do
     expect(get: "questions/1/answers/1/edit").to route_to(
       controller: "answers",
@@ -53,4 +52,25 @@ RSpec.describe 'routing to question/answers' do
       question_id: '1'
     )
   end
+  # Vote routes
+  it "routes questions/1/answers/1 to answers#destroy" do
+    expect(put: "questions/1/answers/1/like").to route_to(
+      controller: "answers",
+      action: "upvote",
+      id: "1",
+      question_id: '1'
+    )
+  end
+  it "routes questions/1/answers/1 to answers#destroy" do
+    expect(put: "questions/1/answers/1/dislike").to route_to(
+      controller: "answers",
+      action: "downvote",
+      id: "1",
+      question_id: '1'
+    )
+  end
+
+
+
+
 end
