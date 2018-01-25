@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     collection do
       match 'search' => 'questions#search', via: [:get, :post], as: :search
     end
-    resources :answers do
+    resources :answers, except: [:index]  do
         member do
           put "like", to: "answers#upvote"
           put "dislike", to: "answers#downvote"
