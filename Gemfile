@@ -11,7 +11,7 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'acts_as_votable', '~> 0.11.1'
 gem "paperclip"
 # gem 'has_scope'
-gem 'devise'
+gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'bxslider-rails', '~> 4.2', '>= 4.2.5.1'
 gem 'trix'
 gem 'ransack', github: 'activerecord-hackery/ransack'
